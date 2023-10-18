@@ -130,13 +130,22 @@ async def callbacks(call: types.CallbackQuery):
     ##################2
     elif call.data == 'teachers':
         await bot.send_message(call.message.chat.id,"""<code>1. Аметова Ольга Анатольевна 
-2.Абдурасулова Гулшода Абдурасуловна
+2. Абдурасулова Гулшода Абдурасуловна
 3. Ганиева Гуландом Хусниддиновна
 4. Зимина Шахноза Шамирзаевна
-5.Уроков Жамшид Махмадиёрович
+5. Уроков Жамшид Махмадиёрович
 6. Рузматова Дурдона Рустамовна
 7. Саматова Зайнура Неъматовна </code>""")
         
+    elif call.data == 'IT':
+        await bot.edit_message_reply_markup(call.message.chat.id,call.message.message_id,reply_markup=LessonsMenu_IT)
+    elif call.data == 'RUSSIAN':
+        await bot.edit_message_reply_markup(call.message.chat.id,call.message.message_id,reply_markup=LessonsMenu_russia)
+    elif call.data == 'ENGLISH':
+        await bot.edit_message_reply_markup(call.message.chat.id,call.message.message_id,reply_markup=LessonsMenu_english)
+    elif call.data == 'ss':
+        pass
+
     elif call.data=='table':
         await bot.send_message(call.message.chat.id,"""<b>1 - смена </b>
 <i>уроки начинаются - <code>8:00</code>
